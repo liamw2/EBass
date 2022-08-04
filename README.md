@@ -1,6 +1,6 @@
 # EBass
 
-The EBass is an electric...electric bass. This was designed for the Northwestern University course Comp_Eng 346: Microprocessor System Design using the NRF52 Microbit. The microbit outputs sine waves or additive sine waves to an AUX output chord (ground, hot (signal), and cold (inverted polarity) that can be played from a speaker. 
+The EBass is an electric...electric bass. This was designed for the Northwestern University course Comp_Eng 346: Microprocessor System Design (Fall 2021) using the NRF52 Microbit. The microbit outputs sine waves or additive sine waves to an AUX output chord (ground, hot (signal), and cold (inverted polarity) that can be played from a speaker. 
 
 The body of the bass is cut from wood for ease of installment of the electrical components. The strings are made up of four touch capacative strip potentiometers that represent the notes E-A-D-G in ascending order. The strip potentionmeters allow a sort of tremelo affect to be applied as the changing resistance slightly alters the frequency outputted. Four touch capacitive buttons lies on the neck of the bass. Instead of the classic fret layout, the buttons represent a binary code to translate to more frets than there are buttons. For example, if buttons 1 and 3 are activated (0101), that corresponds to the 5th fret.
 
