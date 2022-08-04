@@ -1,15 +1,6 @@
-PWM Tone App
-============
 
-Play tones (hopefully musical notes) via the speaker on the Microbit. Uses PWM
-to create the tone.
+The EBass is an electric...electric bass. This was designed for the Northwestern University course Comp_Eng 346: Microprocessor System Design (Fall 2021) using the NRF52 Microbit. The microbit outputs sine waves or additive sine waves to an AUX output chord (ground, hot (signal), and cold (inverted polarity) that can be played from a speaker.
 
-Have each fret position mark a major chord, instead of EADG
+The body of the bass is cut from wood for ease of installment of the electrical components. The strings are made up of four touch capacative strip potentiometers that represent the notes E-A-D-G in ascending order. The strip potentionmeters allow a sort of tremelo affect to be applied as the changing resistance slightly alters the frequency outputted. Four touch capacitive buttons lies on the neck of the bass. Instead of the classic fret layout, the buttons represent a binary code to translate to more frets than there are buttons. For example, if buttons 1 and 3 are activated (0101), that corresponds to the 5th fret.
 
-Demonstrate that the work you're putting in is enough, seems very simple
-- LED matrix with given note?
-
-Superposition for the four notes on one speaker output, would add more complexity
--  Sine function to generate amplitude
--  Amplitude --> PWM width directly
--  Similar to the record and play lab
+The sine waves were made by filling a buffer with values based on the frequencies and then sending it out to the speaker. To avoid clipping between buffers, we added a second buffer that fills while the other sends data. As the first buffer fills, the second sends its data. The main difficulty was the low computing power of the NRF52 as buffers would send faster than they could fill. We found shortcuts by creating a sine lookup table (instead of calculating values every time) and playing with the buffer size and sampling rates. Eventually, we optimized it enough to play two notes at the same time without any perceivable latency between playing and hearing the notes.
